@@ -1,0 +1,73 @@
+{
+  "repo": "thread-mesh-replica-gate",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for replica stream reduction, using windowed input fixtures and late-data behavior checks.",
+  "review_model": {
+    "terms": [
+      "quorum health",
+      "lease drift",
+      "replica lag",
+      "membership churn"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "quorum health",
+      "signal": 74,
+      "slack": 28,
+      "drag": 17,
+      "confidence": 81,
+      "score": 206,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "lease drift",
+      "signal": 62,
+      "slack": 38,
+      "drag": 30,
+      "confidence": 79,
+      "score": 151,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "replica lag",
+      "signal": 84,
+      "slack": 25,
+      "drag": 29,
+      "confidence": 66,
+      "score": 172,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "membership churn",
+      "signal": 64,
+      "slack": 40,
+      "drag": 18,
+      "confidence": 75,
+      "score": 189,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "quorum health",
+      "signal": 59,
+      "slack": 32,
+      "drag": 9,
+      "confidence": 65,
+      "score": 188,
+      "lane": "ship"
+    }
+  ]
+}
