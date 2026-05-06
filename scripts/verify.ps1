@@ -63,3 +63,9 @@ sqlite3 :memory: ".read tests/test.sql"
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-thread-mesh-replica-detail.ps1
 
 sqlite3 :memory: ".read tests/domain_review.sql"
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-thread-mesh-replica-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-thread-mesh-replica-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
