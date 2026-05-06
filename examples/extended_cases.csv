@@ -1,0 +1,7 @@
+name,demand,capacity,latency,risk,weight,score,decision,reason
+baseline,68,87,20,15,6,138,review,distributed systems baseline scenario exercises the review path for bounded failure handling
+pressure,77,73,24,23,8,104,review,distributed systems pressure scenario exercises the review path for bounded failure handling
+surge,105,98,24,17,14,245,accept,distributed systems surge scenario keeps the local fixture within the modeled acceptance band
+degraded,66,57,37,28,5,0,review,distributed systems degraded scenario exercises the review path for bounded failure handling
+recovery,93,104,18,12,12,254,accept,distributed systems recovery scenario keeps the local fixture within the modeled acceptance band
+boundary,71,78,26,15,10,143,review,distributed systems boundary scenario exercises the review path for bounded failure handling
